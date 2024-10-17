@@ -1,5 +1,5 @@
 import mongoose, { Document, ObjectId, Schema } from 'mongoose';
-import { DEGREES, DOCTOR_SPECIALTIES } from '../collections.name';
+import { DOCTOR_SPECIALTIES, SPECIALITY, USERS } from '../collections.name';
 
 export interface DoctorSpecialitySchema extends Document {
     doctor_id: ObjectId;
@@ -12,12 +12,12 @@ export interface DoctorSpecialitySchema extends Document {
 const doctorSpecialitySchema: Schema<DoctorSpecialitySchema> = new Schema({
     doctor_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: DOCTOR_SPECIALTIES,
+        ref: USERS,
         required: true,
     },
     speciality_ids: {
         type: [mongoose.Schema.Types.ObjectId],
-        ref: DEGREES,
+        ref: SPECIALITY,
         required: true,
     },
     is_deleted: {
