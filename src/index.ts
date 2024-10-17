@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import http from 'http';
 import { connectToDb } from './connections';
 import { initializeProjectSettings } from './middleware/initilizeProjectSettings';
+import mastersRouter from './services/master';
 import { envSettings } from './utils/env.config';
 
 if (!envSettings.serverPort) {
@@ -40,6 +41,9 @@ app.get('/', (req, res) => {
 });
 
 // user routes
+
+// MASTER routes
+app.use('/master', mastersRouter);
 
 server.listen(envSettings.serverPort, async () => {
     try {
