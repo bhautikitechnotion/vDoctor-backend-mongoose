@@ -3,7 +3,7 @@ import { MongoBulkWriteError } from 'mongodb';
 import { logger } from '../../utils/logger';
 import { resMsg } from '../../utils/response.messages';
 import { uploadToS3 } from '../../utils/upload/s3.config';
-import { createNewDegreeModel, createNewSpecialityModel } from './master.model';
+import { createNewDegreeModel, createNewSpecialityModel, createNewUserTypeModel } from './master.model';
 
 interface ReturnResponse {
     message: string;
@@ -77,5 +77,39 @@ export const createNewSpeciality = async (req: Request, res: Response): Promise<
 
         logger.error(`createNewSpeciality => ${error.message}`);
         return res.status(204).send({ message: resMsg.SOMETHING_WENT_WRONG, data: [], success: false });
+    }
+};
+
+export const createNewUserType = async (req: Request, res: Response): Promise<Response<ReturnResponse>> => {
+    try {
+        const { body = {} } = req;
+        const { name, type } = body;
+
+        const newBody = {
+            name,
+            type: +type,
+        };
+
+        const { success, data } = await createNewUserTypeModel(newBody);
+
+        if (success) {
+            return res.status(200).send({ message: resMsg.NEW_RECORD_ADDED, data: data, success: true });
+        }
+
+        return res.status(204).send({ message: resMsg.SOMETHING_WENT_WRONG, data: [], success: false });
+    } catch (error: any) {
+        if (error instanceof MongoBulkWriteError) {
+            let message = resMsg.SOMETHING_WENT_WRONG;
+
+            if (error.code === 11000) {
+                message = resMsg.USER_TYPE_ALREADY_EXISTENT;
+            }
+
+            logger.error(`createNewUserType => ${error.message}`);
+            return res.status(200).send({ message: message, data: [], success: false });
+        }
+
+        logger.error(`createNewUserType => ${error.message}`);
+        return res.status(200).send({ message: resMsg.SOMETHING_WENT_WRONG, data: [], success: false });
     }
 };

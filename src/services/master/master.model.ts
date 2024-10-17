@@ -1,5 +1,6 @@
 import { DegreesModal, DegreesSchema } from '../../connections/schemas/m001_degrees';
 import { SpecialityModal } from '../../connections/schemas/m002_specialties';
+import { UserTypesModal } from '../../connections/schemas/m003_user_types';
 import { isValidArray } from '../../utils';
 import { logger } from '../../utils/logger';
 
@@ -15,6 +16,17 @@ interface CreateNewDegree {
     createdAt: string;
     updatedAt: string;
 }
+
+interface CreateNewUserType {
+    name: string;
+    type: number;
+}
+
+interface CreateNewSpeciality {
+    speciality_name: string;
+    icon: string;
+}
+
 export const createNewDegreeModel = async (body: CreateNewDegree[]): Promise<ReturnResponse> => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -35,10 +47,6 @@ export const createNewDegreeModel = async (body: CreateNewDegree[]): Promise<Ret
     });
 };
 
-interface CreateNewSpeciality {
-    speciality_name: string;
-    icon: string;
-}
 export const createNewSpecialityModel = async (body: CreateNewSpeciality): Promise<ReturnResponse> => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -51,6 +59,23 @@ export const createNewSpecialityModel = async (body: CreateNewSpeciality): Promi
             return resolve({ success: false, data: [] });
         } catch (error: any) {
             logger.error(`createNewSpecialityModel => ${error.message}`);
+            return reject(error);
+        }
+    });
+};
+
+export const createNewUserTypeModel = async (body: CreateNewUserType): Promise<ReturnResponse> => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const res = await UserTypesModal.insertMany(body);
+
+            if (isValidArray(res)) {
+                return resolve({ success: true, data: res });
+            }
+
+            return resolve({ success: false, data: [] });
+        } catch (error: any) {
+            logger.error(`createNewUserTypeModel => ${error.message}`);
             return reject(error);
         }
     });

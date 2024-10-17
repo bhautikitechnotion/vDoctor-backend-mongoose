@@ -36,6 +36,7 @@ export const resMsg = {
     MOBILE_OTP_VERIFICATION_FAILED: 'Mobile OTP verification failed.',
     MOBILE_OTP_VERIFICATION_SUCCESS: 'Mobile OTP verified successfully.',
     MOBILE_OTP_EXPIRED: 'OTP expired. Please try again.',
+    USER_TYPE_ALREADY_EXISTENT: 'User type already exists',
 
     // USER SPECIFIC MESSAGE
     ALREADY_USER_REGISTERED: 'User already registered with this email',
