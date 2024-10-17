@@ -79,6 +79,7 @@ export const resMsg = {
     SPECIALITY_LIST_NOT_AVAILABLE: 'Speciality not available',
     SPECIALITY_UPDATED_SUCCESS: 'Speciality updated successfully',
     SPECIALITY_DELETED_SUCCESS: 'Speciality deleted successfully',
+    SPECIALITY_ALREADY_AVAILABLE: 'Speciality already available',
 
     // DOCTOR DEGREE SPECIFIC MESSAGE
     DEGREE_CREATED_SUCCESS: 'Degree created successfully',
