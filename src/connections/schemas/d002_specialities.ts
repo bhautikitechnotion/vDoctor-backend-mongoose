@@ -3,7 +3,7 @@ import { DEGREES, DOCTOR_SPECIALTIES } from '../collections.name';
 
 export interface DoctorSpecialitySchema extends Document {
     doctor_id: ObjectId;
-    degree_ids: ObjectId[];
+    speciality_ids: ObjectId[];
     is_deleted: boolean;
     createdAt: Date;
     updatedAt: Date;
@@ -15,7 +15,7 @@ const doctorSpecialitySchema: Schema<DoctorSpecialitySchema> = new Schema({
         ref: DOCTOR_SPECIALTIES,
         required: true,
     },
-    degree_ids: {
+    speciality_ids: {
         type: [mongoose.Schema.Types.ObjectId],
         ref: DEGREES,
         required: true,
