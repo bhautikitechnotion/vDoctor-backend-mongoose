@@ -5,7 +5,6 @@ import http from 'http';
 import { connectToDb } from './connections';
 import { initializeProjectSettings } from './middleware/initilizeProjectSettings';
 import { envSettings } from './utils/env.config';
-import { mainSocket } from './utils/socket/index';
 
 if (!envSettings.serverPort) {
     process.exit(1);
@@ -46,7 +45,7 @@ server.listen(envSettings.serverPort, async () => {
     try {
         const { success, message } = await connectToDb();
 
-        await mainSocket(server);
+        // await mainSocket(server);
 
         if (success) {
             console.log(message);
