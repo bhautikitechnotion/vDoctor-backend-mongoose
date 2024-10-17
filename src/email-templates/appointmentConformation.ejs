@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" />
+</head>
+
+<body style="margin: 0; padding: 0; font-family: 'Nunito', sans-serif; box-sizing: border-box;">
+    <center>
+        <table align="center" style="max-width: 717px; border-spacing: 0px;">
+            <tr>
+                <td>
+                    <div style="text-align: center; margin: 20px 0 0 0;">
+                        <img src="https://vdoctor-dev.s3.amazonaws.com/utils/logo_full.png" alt="">
+                    </div>
+                    <div style="margin: 30px 0 10px;">
+                        <img src="https://img.freepik.com/free-photo/image-professional-woman-doctor-physician-with-clipboard-writing-listening-patient-hospital-cl_1258-122379.jpg?size=626&ext=jpg&ga=GA1.2.1038770876.1657780276&semt=ais"
+                            width="100%" alt="">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div
+                        style="background-color: #fff; border: 1px solid #f1f1f1; padding: 20px; border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;">
+                        <h1 style="margin: 0; color: #3F68F4; font-size: 29px; font-weight: 500;">Appointment
+                            Confirmation</h1>
+                        <h4 style="font-weight: 400; font-size: 20px;">Hello <span style="font-weight: 700;">
+                                <%= patient_name%>
+                            </span></h4>
+                        <p style="font-size: 18px;">Thank you for choosing vDoctor for your healthcare needs. We are
+                            pleased to confirm your
+                            upcoming appointment with <%= doctor_name%>. More Information as below.</p>
+                        <div style="display: flex;">
+                            <div style=" text-align: center; margin: auto;">
+                                <h3 style="text-align: center; color: #3F68F4;;">
+                                    <%= day_and_date %> <br>at <%= time%>
+                                            <p><a href="<%= calendar_link%>"
+                                                    style="padding: 11px 44px; background: #3e67f4; color: #fff; border-radius: 50px; border: none; font-size: 15px; text-decoration: none ;">Add
+                                                    to Google Calender</a></p>
+                            </div>
+                            <div style="margin: 0 0 0 auto;
+                    max-width: 333px;">
+                                <h4 style="font-size: 20px;">
+                                    <%= doctor_name%>
+                                </h4>
+                                <p><a href="tel:<%= doctor_mobile%>"
+                                        style="text-decoration: none; display: flex; color: #1da1f2; font-size: 18px;"><img
+                                            src="https://vdoctor-dev.s3.amazonaws.com/utils/call.png"
+                                            style="margin: 0 10px 0px 0; width: 20px;height: 20px;" alt="mobile">
+                                        <%= doctor_mobile%>
+                                    </a></p>
+                                <p><a href="mailto:<%= doctor_email%>"
+                                        style="text-decoration: none; display: flex; color: #1da1f2; font-size: 18px;"><img
+                                            src="https://vdoctor-dev.s3.amazonaws.com/utils/mail.png"
+                                            style="margin: 0 10px 0px 0; width: 20px;height: 20px;" alt="email">
+                                        <%= doctor_email%>
+                                    </a></p>
+                                <p style="margin-right: auto; max-width: 343px;"><a href=""
+                                        style="display: flex; align-items: start; font-size: 18px; text-decoration: none;"><img
+                                            src="https://vdoctor-dev.s3.amazonaws.com/utils/location.png"
+                                            style="margin: 4px 10px 0px 0; width: 20px;height: 20px;" alt="location">
+                                        <%= clinic_address%>
+                                    </a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: end; margin: 10px 0 0 0;">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>

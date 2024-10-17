@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Doctor Registration Notification</title>
+</head>
+
+<body
+    style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+    <header style="background-color: #0077be; color: white; padding: 20px; text-align: center;">
+        <h1 style="margin: 0;">MedicalHub Platform</h1>
+    </header>
+    <main style="padding: 20px;">
+        <h2 style="color: #0077be;">New Doctor Registration Alert</h2>
+        <p style="margin-bottom: 20px;">Dear Admin,</p>
+        <p>A new doctor has registered on our telemedicine platform. Please review their information and take
+            appropriate action regarding their registration.</p>
+        <div style="background-color: #f0f0f0; border-left: 4px solid #0077be; padding: 15px; margin-bottom: 20px;">
+            <p style="margin: 5px 0;"><strong>Email:</strong>
+                <%= email %>
+            </p>
+            <p style="margin: 5px 0;"><strong>Registration Date:</strong>
+                <%= registration_date %>
+            </p>
+        </div>
+        <p>Please take the following actions:</p>
+        <ol style="margin-bottom: 20px;">
+            <li>Review the doctor's credentials and documentation</li>
+            <li>Verify their medical license and certifications</li>
+            <li>Conduct a background check if required</li>
+            <li>Approve or reject the registration based on your findings</li>
+        </ol>
+        <a href="#"
+            style="display: inline-block; background-color: #0077be; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Review
+            Registration</a>
+    </main>
+    <footer style="text-align: center; margin-top: 20px; font-size: 0.8em; color: #666;">
+        <p>&copy; 2024 MedicalHub Platform. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

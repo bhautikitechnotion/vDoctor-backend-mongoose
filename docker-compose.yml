@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+    medicalhub-backend:
+        build: .
+        container_name: medicalhub-backend
+        ports:
+            - '6000:6000'
+        env_file:
+            - .env
+        dns:
+            - 8.8.8.8
+            - 8.8.4.4
+        networks:
+            - node-network
+        restart: unless-stopped
+
+networks:
+    node-network:
+        driver: bridge

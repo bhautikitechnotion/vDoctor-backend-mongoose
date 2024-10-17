@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Medical Hub</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; line-height: 1.6; background-color: #f4f4f4; margin: 0; padding: 0;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0"
+        style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+        <tr>
+            <td style="padding: 40px 30px; text-align: center; background-color: #3498db;">
+                <h1 style="color: #ffffff; margin: 0;">Welcome to Medical Hub</h1>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 30px;">
+                <p style="margin-bottom: 20px;">Hello Dear,</p>
+                <p style="margin-bottom: 20px;">Thank you for registering with our tele-medicine app. We're excited to
+                    have you on board and look forward to providing you with quality healthcare services from the
+                    comfort of your home.</p>
+                <p style="margin-bottom: 20px;">You have registered with the following email address: <strong
+                        style="color: #3498db;">
+                        <%= user_email %>
+                    </strong></p>
+                <p style="margin-bottom: 20px;">To get started, please verify your account by clicking the button below:
+                </p>
+                <table role="presentation" cellspacing="0" cellpadding="0" style="margin: 30px auto;">
+                    <tr>
+                        <td style="border-radius: 4px; background-color: #3498db;">
+                            <a href="<%= link%>" target="_blank"
+                                style="display: inline-block; padding: 12px 24px; color: #ffffff; text-decoration: none; font-weight: bold;">Verify
+                                Your Account</a>
+                        </td>
+                    </tr>
+                </table>
+                <p style="margin-bottom: 20px;">If you have any questions or need assistance, please don't hesitate to
+                    contact our support team.</p>
+                <p style="margin-bottom: 20px;">Best regards,<br>The Medical Hub Team</p>
+            </td>
+        </tr>
+        <tr>
+            <td
+                style="padding: 20px 30px; text-align: center; background-color: #f8f8f8; color: #888888; font-size: 14px;">
+                <p style="margin: 0;">&copy; 2024 Medical Hub. All rights reserved.</p>
+                <p style="margin: 10px 0 0;">123 Main St, City, State, ZIP</p>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

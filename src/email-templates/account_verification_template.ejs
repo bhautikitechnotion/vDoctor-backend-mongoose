@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your MedicalHub Account</title>
+</head>
+
+<body
+    style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+    <header style="background-color: #0077be; color: white; padding: 20px; text-align: center;">
+        <h1 style="margin: 0;">MedicalHub Platform</h1>
+    </header>
+    <main style="padding: 20px;">
+        <h2 style="color: #0077be;">Verify Your Email Address</h2>
+        <p style="margin-bottom: 20px;">Hello,</p>
+        <p>To complete your account setup and ensure the security of your account, please verify your email address by
+            clicking the button below:</p>
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="<%= verification_link %>"
+                style="display: inline-block; background-color: #0077be; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold;">Verify
+                My Email</a>
+        </div>
+        <p>If the button above doesn't work, you can also copy and paste the following link into your browser:</p>
+        <p style="word-break: break-all; background-color: #f0f0f0; padding: 10px; border-radius: 5px;">
+            <%= verification_link %>
+        </p>
+        <p><strong>Important:</strong> This link will expire in 30 minutes for security reasons.</p>
+        <div style="background-color: #f9f9f9; border-left: 4px solid #0077be; padding: 15px; margin-top: 20px;">
+            <p style="margin: 0;"><strong>Note:</strong> For your security, please do not share this email or the
+                verification link with anyone.</p>
+        </div>
+    </main>
+    <footer style="text-align: center; margin-top: 20px; font-size: 0.8em; color: #666;">
+        <p>If you have any questions or need assistance, please contact our support team at
+            support@MedicalHubplatform.com
+        </p>
+        <p>&copy; 2024 MedicalHub Platform. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
