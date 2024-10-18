@@ -4,8 +4,8 @@ import helmet from 'helmet';
 import http from 'http';
 import { connectToDb } from './connections';
 import { initializeProjectSettings } from './middleware/initilizeProjectSettings';
+import mastersRouter from './services/master';
 import { envSettings } from './utils/env.config';
-import { mainSocket } from './utils/socket/index';
 
 if (!envSettings.serverPort) {
     process.exit(1);
@@ -42,11 +42,14 @@ app.get('/', (req, res) => {
 
 // user routes
 
+// MASTER routes
+app.use('/master', mastersRouter);
+
 server.listen(envSettings.serverPort, async () => {
     try {
         const { success, message } = await connectToDb();
 
-        await mainSocket(server);
+        // await mainSocket(server);
 
         if (success) {
             console.log(message);

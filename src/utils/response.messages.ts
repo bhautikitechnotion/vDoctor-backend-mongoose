@@ -36,6 +36,7 @@ export const resMsg = {
     MOBILE_OTP_VERIFICATION_FAILED: 'Mobile OTP verification failed.',
     MOBILE_OTP_VERIFICATION_SUCCESS: 'Mobile OTP verified successfully.',
     MOBILE_OTP_EXPIRED: 'OTP expired. Please try again.',
+    USER_TYPE_ALREADY_EXISTENT: 'User type already exists',
 
     // USER SPECIFIC MESSAGE
     ALREADY_USER_REGISTERED: 'User already registered with this email',
@@ -79,6 +80,7 @@ export const resMsg = {
     SPECIALITY_LIST_NOT_AVAILABLE: 'Speciality not available',
     SPECIALITY_UPDATED_SUCCESS: 'Speciality updated successfully',
     SPECIALITY_DELETED_SUCCESS: 'Speciality deleted successfully',
+    SPECIALITY_ALREADY_AVAILABLE: 'Speciality already available',
 
     // DOCTOR DEGREE SPECIFIC MESSAGE
     DEGREE_CREATED_SUCCESS: 'Degree created successfully',
