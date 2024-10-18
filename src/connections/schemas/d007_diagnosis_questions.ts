@@ -24,8 +24,9 @@ const dDiagnosisQuestionSchema: Schema<DDiagnosisQuestionsSchema> = new Schema(
     {
         doctor_id: { type: mongoose.Schema.Types.ObjectId, ref: USERS, required: true },
         questions: [questionsSchema],
+        is_deleted: false,
     },
     { timestamps: true },
 );
 
-export const UsersModal = model<DDiagnosisQuestionsSchema>(DIAGNOSIS_QUESTIONS, dDiagnosisQuestionSchema);
+export const DDiagnosisQuestionsModal = model<DDiagnosisQuestionsSchema>(DIAGNOSIS_QUESTIONS, dDiagnosisQuestionSchema);
